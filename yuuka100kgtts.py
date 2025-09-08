@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 """
-Simple Tkinter + pyttsx3 TTS GUI (with Fix 2: manual event loop)
---------------------------------------------------
-Dependencies:
-    pip install pyttsx3
+Simple Tkinter + pyttsx3 TTS GUI
+must run this command to install Pyttsx3:    pip install pyttsx3
 """
 
 import tkinter as tk
@@ -20,15 +18,15 @@ thread = None
 def speak(text):
     global speaking
     try:
-        # Apply settings
+        # settings
         engine.setProperty("rate", rate_scale.get())
         engine.setProperty("volume", volume_scale.get() / 100.0)
         selected_voice = voice_combo.current()
         engine.setProperty("voice", voices[selected_voice].id)
 
         engine.say(text)
-        engine.startLoop(False)   # start loop, non-blocking
-        while engine.isBusy():    # let it speak fully
+        engine.startLoop(False)   # start da loop, non-blocking
+        while engine.isBusy():    # bro just let it speak fully
             engine.iterate()
         engine.endLoop()
     except Exception as e:
@@ -54,7 +52,7 @@ def stop_speaking():
         engine.stop()
         speaking = False
 
-# Tkinter UI
+# UI แบบใด
 root = tk.Tk()
 root.title("Simple TTS")
 root.geometry("500x350")
@@ -93,3 +91,4 @@ tk.Button(button_frame, text="Speak", command=start_speaking).grid(row=0, column
 tk.Button(button_frame, text="Stop", command=stop_speaking).grid(row=0, column=1, padx=5)
 
 root.mainloop()
+
