@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ระบบรับสมัครนักเรียน</title>
+</head>
+<body>
+
+    <p>ดนตรีประกอบ:</p>
+    <iframe 
+        src="https://drive.google.com/file/d/1MGJzgDjvmZtDpaSx0KuAUDNO5pO6X7RX/preview" 
+        width="100%" 
+        height="100" 
+        allow="autoplay" 
+        loading="lazy" 
+    ></iframe>
+    
+    <hr>
+
+    <h1>ใบสมัครนักเรียน</h1>
+
+    <form action="/submit_application" method="post" enctype="multipart/form-data">
+        
+        <label for="fullname">1. ชื่อ - สกุล:</label><br>
+        <input type="text" id="fullname" name="fullname" placeholder="กรอกชื่อ-นามสกุล" required><br><br>
+
+        <label for="age">2. อายุ:</label><br>
+        <input type="number" id="age" name="age" min="1" max="100"><br><br>
+
+        <label for="address_no">3. ที่อยู่เลขที่:</label><br>
+        <input type="text" id="address_no" name="address_no"><br><br>
+
+        <label for="sub_district">4. ตำบล/เเขวง:</label><br>
+        <input type="text" id="sub_district" name="sub_district"><br><br>
+
+        <label for="district">5. อำเภอ/เขต:</label><br>
+        <input type="text" id="district" name="district"><br><br>
+
+        <label for="province">6. จังหวัด:</label><br>
+        <input type="text" id="province" name="province"><br><br>
+
+        <label for="zipcode">7. รหัสไปรษณีย์:</label><br>
+        <input type="text" id="zipcode" name="zipcode" pattern="[0-9]{5}"><br><br>
+
+        <label for="phone">8. เบอร์โทร:</label><br>
+        <input type="tel" id="phone" name="phone"><br><br>
+
+        <label for="email">9. Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <h3>10. ตั้งรหัสเข้าใช้งาน</h3>
+
+        <label for="username">11. Username:</label><br>
+        <input type="text" id="username" name="username"><br><br>
+
+        <label for="password">12. Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+
+        <label for="photo">13. แนบรูปภาพถ่าย (ลากไฟล์มาวางที่ปุ่มด้านล่าง):</label><br>
+        <input type="file" id="photo" name="photo" accept="image/*"><br><br>
+
+        <input type="submit" value="Save">
+
+    </form>
+
+</body>
+</html>
