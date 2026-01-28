@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation Assignment</title>
+    <style>
+        /* ตั้งค่าพื้นหลังให้ดูเท่ๆ แบบ Dark Mode */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1a1a1a;
+            font-family: 'Sarabun', sans-serif; /* แนะนำให้ใช้ Google Font ถ้ามี */
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        /* ส่วนชื่อ: สิรวิชญ์ ว่องกีรติกุล */
+        .name-text {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 20px;
+            /* Animation: เลื่อนจากซ้ายมาขวา */
+            animation: slideInFromLeft 1.5s ease-out forwards;
+            opacity: 0; /* เริ่มต้นแบบซ่อนก่อน */
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        /* ส่วน Soft Skill */
+        .skill-text {
+            font-size: 1.8rem;
+            color: #00ffcc; /* สีเขียวนีออน */
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            /* Animation: ค่อยๆ ชัดขึ้น และขยายตัวนิดหน่อย */
+            animation: fadeInAndScale 2s ease-in-out forwards;
+            animation-delay: 1s; /* รอให้ชื่อมาครบค่อยเล่น */
+            opacity: 0;
+        }
+
+        /* --- Keyframes (หัวใจของการ Animation) --- */
+
+        /* 1. ท่าเลื่อนเข้ามาจากซ้าย */
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* 2. ท่าค่อยๆ โผล่มา + เรืองแสง */
+        @keyframes fadeInAndScale {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+                text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="name-text">สิรวิชญ์ ว่องกีรติกุล</div>
+        
+        <div class="skill-text">Soft Skill: Creative 100% Trust</div>
+    </div>
+
+</body>
+</html>
